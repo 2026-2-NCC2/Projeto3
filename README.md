@@ -10,9 +10,7 @@
 
 ## Integrantes
 
-<a href="LINK_LINKEDIN">Luigi Sales Colaneri</a>
-<a href="LINK_LINKEDIN">Marcos Paulo Pereira de Souza</a>
-<a href="LINK_LINKEDIN">Thomaz Homem de Melo</a>
+## Integrantes:<a href="https://www.linkedin.com/in/victorbarq/">Thomaz Homem de Melo Oliveira</a>, <a href="https://www.linkedin.com/in/victorbarq/">Marcos Paulo Pereira de Souza</a>, <a href="https://www.linkedin.com/in/victorbarq/">Luigi Sales Colaneri</a>
 
 ## Professores Orientadores
 
