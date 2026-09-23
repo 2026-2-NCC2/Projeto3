@@ -3,7 +3,7 @@
 ## Troca Ticket - FW Tickets
 
 ## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Thomaz Homem de Melo Oliveira</a>, <a href="https://www.linkedin.com/in/victorbarq/">Marcos Paulo Pereira de Souza</a>, <a href="https://www.linkedin.com/in/victorbarq/">Luigi Sales Colaneri</a>  
-**Professores Orientadores:** Paula Astorino, Kátia Bossi, Francisco de Souza Escobar, David de Oliveira Lemes, Jésus Gomes  
+## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">David de Oliveira Lemes</a>, <a href="https://www.linkedin.com/in/victorbarq/">Francisco de Souza Escobar</a>, <a href="https://www.linkedin.com/in/victorbarq/">Jésus Gomes</a>, <a href="https://www.linkedin.com/in/victorbarq/">Kátia Bossi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Paula Astorino</a>
 
 ---
 
