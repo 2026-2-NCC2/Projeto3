@@ -154,7 +154,7 @@ http://localhost:5173/
 <img src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" alt="Licença CC BY-ND 4.0">
 </a>
 
-TrocaTicket © 2026 by Carlos Eduardo da Silva, Lucas Pelliciotti Cintra Da Silva, Guilherme Harada Morato, Gabryel Vasconcelos Lista e Guilherme Fernandes Alexandre de Carvalho.
+TrocaTicket © 2026 by Luigi Sales Colaneri, Thomaz Homem de Melo Oliveira e Marcos Paulo Pereira
 
 Licenciado sob:
 
