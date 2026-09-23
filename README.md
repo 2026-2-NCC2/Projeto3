@@ -14,11 +14,7 @@
 
 ## Professores Orientadores
 
-<a href="LINK_LINKEDIN">Francisco de Souza Escobar</a>
-<a href="LINK_LINKEDIN">David de Oliveira Lemes</a>
-<a href="LINK_LINKEDIN">Jésus Gomes</a>
-<a href="LINK_LINKEDIN">Kátia Bossi</a>
-<a href="LINK_LINKEDIN">Paula Astorino</a>
+## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">David de Oliveira Lemes</a>, <a href="https://www.linkedin.com/in/victorbarq/">Francisco de Souza Escobao</a>, <a href="https://www.linkedin.com/in/victorbarq/">Jésus Gomes</a>, <a href="https://www.linkedin.com/in/victorbarq/">Kátia Bossi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Paula Astorino</a>
 
 ## 📌 Descrição
 
