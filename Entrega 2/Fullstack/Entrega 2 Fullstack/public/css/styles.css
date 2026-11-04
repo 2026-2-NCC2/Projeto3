@@ -757,7 +757,7 @@ textarea:focus {
   .topnav { justify-content: space-between; }
 }
 
-/* Identidade do protótipo Stitch aplicada às telas conectadas à API. */
+
 .auth-intro { display: grid; grid-template-columns: 1.3fr minmax(0, 1fr); gap: 1.2rem; align-items: stretch; }
 .auth-intro .auth-card { max-width: none; }
 .market-hero { padding: clamp(1.4rem, 5vw, 3.6rem); border-radius: 24px; color: white;
