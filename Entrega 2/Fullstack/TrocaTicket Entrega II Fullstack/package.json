@@ -1,0 +1,28 @@
+{
+  "name": "trocaticket-eventos",
+  "version": "3.0.0",
+  "description": "TrocaTicket - plataforma de planejamento e precificação de eventos (API Node/Express + MySQL + front-end integrado)",
+  "main": "src/server.js",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "criar-admin": "node scripts/criar-admin.js",
+    "test:unit": "node --test test/unit/ticket.test.js test/unit/seguranca.test.js test/unit/validadores.test.js",
+    "test:integration": "node --test test/integration/fluxo.api.test.js",
+    "test": "node scripts/testar.js",
+    "apresentacao": "node scripts/apresentacao.js",
+    "db:init": "node scripts/inicializar-banco.js"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5",
+    "nodemailer": "^10.3.1",
+    "qrcode": "^1.5.4"
+  }
+}
