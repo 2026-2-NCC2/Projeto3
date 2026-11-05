@@ -134,22 +134,40 @@ GitHub
 
 Figma
 
-# Entregas do PI
-### **DECLARAÇÃO DE USO DE INTELIGÊNCIA ARTIFICIAL**
 
-## Entrega 2
-<br><br>
+## DECLARAÇÃO DE USO DE INTELIGÊNCIA ARTIFICIAL
 
-### Disciplina 1
+### Disciplina 1 — Full-Stack
 
 | **Aluno(s) Responsável(veis)** | Luigi Sales Colaneri. |
-| :--- | :--- |
 | **Ferramenta utilizada** | ChatGPT. |
 | **Versão/modelo** | GPT-6.1 Sol. |
 | **Disciplina / Trabalho** | Full-Stack — Desenvolvimento e evolução da plataforma TrocaTicket. |
-| **Finalidade de uso** | Auxiliar na implementação e evolução técnica da plataforma, na organização dos requisitos, na análise e correção de problemas de autenticação e integração com o banco de dados, na revisão dos fluxos de navegação e na preparação das configurações de execução e implantação. Apoiar a documentação técnica e as verificações de funcionamento do sistema. |
-| ***Prompts* principais utilizados** | Síntese das solicitações: analisar os requisitos funcionais do projeto; identificar causas de inconsistências no funcionamento; apoiar a implementação e revisão dos fluxos de acesso e de cotações; esclarecer procedimentos de execução; organizar instruções técnicas e preparar configurações de implantação. |
-| **Trechos ou entregas afetadas** | Implementação e revisão dos fluxos de cadastro, autenticação e navegação; organização das solicitações de cotação no Portal do Fornecedor; configurações de execução do servidor; instruções de instalação e implantação; documentação e verificações técnicas relacionadas às funcionalidades ajustadas. |
+| **Finalidade de uso** | Auxiliar na compreensão de conceitos técnicos relacionados ao desenvolvimento de aplicações web, no esclarecimento de dúvidas sobre terminologias, na organização preliminar de informações e no refinamento linguístico da documentação autoral do projeto. |
+| **Prompts principais utilizados** | Síntese das solicitações: esclarecer conceitos gerais relacionados ao desenvolvimento web; sugerir formas de organizar informações técnicas; revisar a clareza de explicações autorais; refinar a linguagem utilizada na documentação; auxiliar na padronização textual das instruções de utilização do sistema. |
+| **Trechos ou entregas afetadas** | Organização preliminar de tópicos da documentação técnica, revisão linguística das descrições de funcionalidades, padronização de terminologias e refinamento textual das instruções de utilização da plataforma. |
+
+**Declaração de responsabilidade autoral:**
+
+Declaro que o uso acima descrito está em conformidade com o GUIA PARA O USO RESPONSÁVEL DE INTELIGÊNCIA ARTIFICIAL NA FECAP e que o conteúdo final é de minha plena responsabilidade autoral.
+
+---
+
+### Disciplina 2 — Gestão Empresarial e Dinâmicas das Organizações
+
+| **Aluno(s) Responsável(veis)** | Luigi Sales Colaneri. |
+| **Ferramenta utilizada** | ChatGPT. |
+| **Versão/modelo** | GPT-6.1 Sol. |
+| **Disciplina / Trabalho** | Gestão Empresarial e Dinâmicas das Organizações — Entrega 2: Mapa de Processos do TrocaTicket. |
+| **Finalidade de uso** | Auxiliar na revisão gramatical, no refinamento linguístico e na organização preliminar das ideias apresentadas no trabalho, contribuindo para a clareza da comunicação, a padronização de terminologias e a apresentação textual dos conceitos relacionados à gestão de processos organizacionais. |
+| **Prompts principais utilizados** | Síntese das solicitações: refinar a linguagem de textos autorais relacionados ao mapa de processos; revisar a clareza das explicações; sugerir formas de organizar preliminarmente os tópicos; esclarecer terminologias relacionadas à gestão de processos; auxiliar na padronização textual e na apresentação das informações. |
+| **Trechos ou entregas afetadas** | Refinamento linguístico da introdução e da justificativa, revisão gramatical das descrições das etapas do processo, organização preliminar dos tópicos explicativos e padronização textual da documentação apresentada. |
+
+**Declaração de responsabilidade autoral:**
+
+Declaro que o uso acima descrito está em conformidade com o GUIA PARA O USO RESPONSÁVEL DE INTELIGÊNCIA ARTIFICIAL NA FECAP e que o conteúdo final é de minha plena responsabilidade autoral.
+
+
 
 📋 Licença / License
 TrocaTicket © 2026 by Luigi Sales Colaneri, Thomaz Homem de Melo Oliveira, Marcos Paulo Pereira. Licenciado sob: CC BY 4.0
