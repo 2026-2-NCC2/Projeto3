@@ -4,7 +4,7 @@
 <a href= "https://www.fecap.br/"><img src="https://tse4.mm.bing.net/th/id/OIP.mmndDi3pHHHtTOmlNkpU0QHaCZ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
 </p>
 
-# TrocaTicket
+# Gongos Balongos
 ## Integrantes: <a href="https://github.com/iamsales4-glitch">Luigi Sales Colaneri</a>, <a href="https://github.com/thomazhmo">Thomaz Homem de Melo Oliveira</a>, <a href="https://github.com/marcospaulo-glitch">Marcos Paulo Pereira</a>
 
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/francisco-escobar/">Francisco de Souza Escobar</a>, <a href="https://www.linkedin.com/in/paula-astorino-432b5812a/">Paula Sanchez Astorino</a>, <a href="https://www.linkedin.com/in/dolemes/">David De Oliveira Lemes</a>, <a href="https://www.linkedin.com/in/jesuslisboagomes/">Jésus De Lisboa Gomes</a>, <a href="https://www.linkedin.com/in/katia-bossi/">Katia Milani Lara Bossi</a>
