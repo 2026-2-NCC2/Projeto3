@@ -134,14 +134,22 @@ GitHub
 
 Figma
 
-| **Aluno(s) Responsável(veis)** | Luigi Sales Colaneri;  |
+# Entregas do PI
+### **DECLARAÇÃO DE USO DE INTELIGÊNCIA ARTIFICIAL**
+
+## Entrega 2
+<br><br>
+
+### Disciplina 1
+
+| **Aluno(s) Responsável(veis)** | Luigi Sales Colaneri. |
 | :--- | :--- |
 | **Ferramenta utilizada** | ChatGPT. |
-| **Versão/modelo** | GPT-6.1 Sol|
-| **Disciplina / Trabalho** | Full-Stack — Entrega 2: desenvolvimento e evolução da plataforma TrocaTicket. |
-| **Finalidade de uso** | Auxiliar na implementação e evolução técnica da plataforma, na organização dos requisitos, na análise e correção de inconsistências de autenticação e integração com o banco de dados, na revisão dos fluxos de navegação e na preparação das configurações de execução e implantação. Apoiar a documentação técnica e a realização de verificações de funcionamento. |
-| ***Prompts* principais utilizados** | Síntese das solicitações registradas: reformular o TrocaTicket conforme os requisitos apresentados; corrigir problemas de cadastro e autenticação; ajustar o redirecionamento após login; unificar o fluxo de cotações do Portal do Fornecedor; verificar o funcionamento dos módulos; preparar exclusivamente as configurações necessárias para implantação, preservando os demais comportamentos da aplicação. |
-| **Trechos ou entregas afetadas** | Funcionalidades de autenticação e cadastro; integração entre interface, servidor e banco de dados; navegação após login; apresentação das oportunidades e envio de propostas no Portal do Fornecedor; configurações de execução e implantação; documentação técnica e verificações dos fluxos da plataforma. |
+| **Versão/modelo** | GPT-6.1 Sol. |
+| **Disciplina / Trabalho** | Full-Stack — Desenvolvimento e evolução da plataforma TrocaTicket. |
+| **Finalidade de uso** | Auxiliar na implementação e evolução técnica da plataforma, na organização dos requisitos, na análise e correção de problemas de autenticação e integração com o banco de dados, na revisão dos fluxos de navegação e na preparação das configurações de execução e implantação. Apoiar a documentação técnica e as verificações de funcionamento do sistema. |
+| ***Prompts* principais utilizados** | Síntese das solicitações: analisar os requisitos funcionais do projeto; identificar causas de inconsistências no funcionamento; apoiar a implementação e revisão dos fluxos de acesso e de cotações; esclarecer procedimentos de execução; organizar instruções técnicas e preparar configurações de implantação. |
+| **Trechos ou entregas afetadas** | Implementação e revisão dos fluxos de cadastro, autenticação e navegação; organização das solicitações de cotação no Portal do Fornecedor; configurações de execução do servidor; instruções de instalação e implantação; documentação e verificações técnicas relacionadas às funcionalidades ajustadas. |
 
 📋 Licença / License
 TrocaTicket © 2026 by Luigi Sales Colaneri, Thomaz Homem de Melo Oliveira, Marcos Paulo Pereira. Licenciado sob: CC BY 4.0
