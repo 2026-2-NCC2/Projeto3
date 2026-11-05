@@ -1,0 +1,787 @@
+{
+  "info": {
+    "_postman_id": "7f3c2a10-trocaticket-eventos-entrega2",
+    "name": "TrocaTicket - Eventos e Comércio v3",
+    "description": "CRUD acadêmico e comércio integrado. Use a pasta Comércio para catálogo, reserva e compra. Os IDs são salvos pelas respostas.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000/api",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "eventoId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "visitor",
+      "value": "postman-visitante-1234567890",
+      "type": "string"
+    },
+    {
+      "key": "reservaId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "loteId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "ingressoId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "anuncioId",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "0. Login do organizador (seed: organizador@demo.com)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"organizador@demo.com\",\n  \"senha\": \"Demo@2026\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/auth/login",
+        "auth": {
+          "type": "noauth"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200 OK', () => pm.response.to.have.status(200));",
+              "pm.test('Token recebido e salvo', () => {",
+              "  pm.collectionVariables.set('token', pm.response.json().token);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "1. Listar eventos (GET /eventos)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/eventos?page=1&limit=10&sort=data_inicio&order=asc"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200 OK', () => pm.response.to.have.status(200));",
+              "pm.test('Resposta contém data[] e meta', () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body.data).to.be.an('array');",
+              "  pm.expect(body.meta).to.have.property('total');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Criar evento (POST /eventos)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Festa de Integração 2026\",\n  \"descricao\": \"Evento criado pela collection Postman\",\n  \"local_evento\": \"Pátio FECAP\",\n  \"data_inicio\": \"2026-12-10T20:00\",\n  \"data_fim\": \"2026-12-10T23:30\",\n  \"publico_minimo\": 100,\n  \"publico_maximo\": 400\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/eventos"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 201 Created', () => pm.response.to.have.status(201));",
+              "pm.test('Header Location presente', () => pm.response.to.have.header('Location'));",
+              "pm.test('Retorna o id gerado e salva em eventoId', () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body.id).to.be.a('number');",
+              "  pm.collectionVariables.set('eventoId', body.id);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Buscar evento por ID (GET /eventos/:id)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/eventos/{{eventoId}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200 OK', () => pm.response.to.have.status(200));",
+              "pm.test('Dados correspondem ao evento criado', () => {",
+              "  pm.expect(pm.response.json().nome).to.eql('Festa de Integração 2026');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Atualizar evento (PUT /eventos/:id)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Festa de Integração 2026 (revisada)\",\n  \"descricao\": \"Atualizado via PUT\",\n  \"local_evento\": \"Pátio FECAP - Bloco B\",\n  \"data_inicio\": \"2026-12-10T20:00\",\n  \"data_fim\": \"2026-12-11T00:00\",\n  \"publico_minimo\": 120,\n  \"publico_maximo\": 450\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/eventos/{{eventoId}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200 OK', () => pm.response.to.have.status(200));",
+              "pm.test('Status atualizado para publicado', () => {",
+              "  pm.expect(pm.response.json().status).to.eql('publicado');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Atualizar parcialmente (PATCH /eventos/:id)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"publico_maximo\": 500\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/eventos/{{eventoId}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200 OK', () => pm.response.to.have.status(200));",
+              "pm.test('Apenas publico_maximo foi alterado', () => {",
+              "  pm.expect(pm.response.json().publico_maximo).to.eql(500);",
+              "  pm.expect(pm.response.json().nome).to.eql('Festa de Integração 2026 (revisada)');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "6. Excluir evento (DELETE /eventos/:id)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/eventos/{{eventoId}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 204 No Content', () => pm.response.to.have.status(204));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Erro 1 - Dados inválidos (POST com 400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"a\",\n  \"data_inicio\": \"31/12/2026\",\n  \"publico_minimo\": 300,\n  \"publico_maximo\": 100\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/eventos"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 400 Bad Request', () => pm.response.to.have.status(400));",
+              "pm.test('Retorna lista de campos inválidos em details', () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body.error.details).to.be.an('array').that.is.not.empty;",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Erro 2 - Evento inexistente (GET com 404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/eventos/999999999"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 404 Not Found', () => pm.response.to.have.status(404));",
+              "pm.test('Mensagem de erro padronizada', () => {",
+              "  pm.expect(pm.response.json().error.message).to.eql('Evento não encontrado.');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Erro 3 - JSON malformado (POST com 400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{nome: \"sem aspas\"",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/eventos"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 400 para JSON inválido', () => pm.response.to.have.status(400));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Erro 4 - Sem token (GET com 401)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/eventos",
+        "auth": {
+          "type": "noauth"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 401 sem autenticação', () => pm.response.to.have.status(401));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comércio integrado v3",
+      "item": [
+        {
+          "name": "1. Catálogo público",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              }
+            ],
+            "url": "{{baseUrl}}/commerce/catalogo"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const data=pm.response.json(); pm.collectionVariables.set('eventoId', data[0].id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2. Lotes e ingressos do evento",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              }
+            ],
+            "url": "{{baseUrl}}/commerce/catalogo/{{eventoId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set('loteId',pm.response.json().lotes[0].id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "3. Reservar um ingresso",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              }
+            ],
+            "url": "{{baseUrl}}/commerce/reservas",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lote_id\": \"{{loteId}}\",\n  \"quantidade\": 1,\n  \"visitante\": \"{{visitor}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set('reservaId',pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "4. Consultar reserva",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              }
+            ],
+            "url": "{{baseUrl}}/commerce/reservas/{{reservaId}}"
+          }
+        },
+        {
+          "name": "5. Login comprador do exemplo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              }
+            ],
+            "url": "{{baseUrl}}/auth/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"comprador@demo.com\",\n  \"senha\": \"Demo@2026\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set('token',pm.response.json().token);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "6. Confirmar pagamento simulado",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": "{{baseUrl}}/commerce/pagar",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reserva_id\": \"{{reservaId}}\",\n  \"visitante\": \"{{visitor}}\",\n  \"metodo\": \"pix\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "7. Carteira",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": "{{baseUrl}}/commerce/carteira"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const data=pm.response.json(); if(data.tickets[0])pm.collectionVariables.set('ingressoId',data.tickets[0].id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "8. QR do ingresso",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": "{{baseUrl}}/commerce/ingressos/{{ingressoId}}/qr"
+          }
+        },
+        {
+          "name": "9. Anunciar por R$ 120",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": "{{baseUrl}}/commerce/anuncios",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ingresso_id\": \"{{ingressoId}}\",\n  \"preco_centavos\": 12000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if(pm.response.code===200)pm.collectionVariables.set('anuncioId',pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "10. Pedidos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": "{{baseUrl}}/commerce/pedidos"
+          }
+        },
+        {
+          "name": "11. Login administrador",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              }
+            ],
+            "url": "{{baseUrl}}/auth/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@trocaticket.com.br\",\n  \"senha\": \"Admin@2026\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set('token',pm.response.json().token);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "12. Aprovar anúncio",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": "{{baseUrl}}/commerce/admin/anuncios/{{anuncioId}}/moderar",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"aprovado\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "13. Painel de administração",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Visitante",
+                "value": "{{visitor}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": "{{baseUrl}}/commerce/admin"
+          }
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  }
+}
