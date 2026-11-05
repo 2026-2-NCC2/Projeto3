@@ -1,5 +1,4 @@
-# TrocaTicket · Versão 3
-
+# TrocaTicket · Gongo Balongos
 Marketplace de ingressos oficiais e de revenda, gestão de eventos, cotações e serviços. SPA em HTML, CSS e JavaScript, com API Express, MySQL e modo de apresentação com SQLite persistente.
 
 ## Abrir no Windows
@@ -20,8 +19,6 @@ O banco é criado e preenchido automaticamente em **.dados/apresentacao.sqlite**
 | admin@trocaticket.com.br | Admin@2026 |
 
 A conta **revendedor@demo.com** tem perfil **comprador**, com ingresso anunciado. A revenda fica dentro da carteira. Novos compradores são aprovados automaticamente. Organizadores e fornecedores aguardam a administração.
-
-Se a porta 3000 estiver ocupada, feche a versão anterior. Para usar outra porta no PowerShell, defina **$env:PORT=3001** antes de executar **npm run apresentacao**.
 
 ## Roteiro para apresentar
 
