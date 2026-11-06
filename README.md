@@ -142,7 +142,7 @@ Figma
 | **Aluno(s) Responsável(veis)** | Luigi Sales Colaneri. |
 | **Ferramenta utilizada** | ChatGPT. |
 | **Versão/modelo** | GPT-6.1 Sol. |
-| **Disciplina / Trabalho** | Full-Stack — Desenvolvimento e evolução da plataforma TrocaTicket. |
+| **Disciplina / Trabalho** | Desenvolvimento Web Full Stack |
 | **Finalidade de uso** | Auxiliar na compreensão de conceitos técnicos relacionados ao desenvolvimento de aplicações web, no esclarecimento de dúvidas sobre terminologias, na organização preliminar de informações e no refinamento linguístico da documentação autoral do projeto. |
 | **Prompts principais utilizados** | Síntese das solicitações: esclarecer conceitos gerais relacionados ao desenvolvimento web; sugerir formas de organizar informações técnicas; revisar a clareza de explicações autorais; refinar a linguagem utilizada na documentação; auxiliar na padronização textual das instruções de utilização do sistema. |
 | **Trechos ou entregas afetadas** | Organização preliminar de tópicos da documentação técnica, revisão linguística das descrições de funcionalidades, padronização de terminologias e refinamento textual das instruções de utilização da plataforma. |
