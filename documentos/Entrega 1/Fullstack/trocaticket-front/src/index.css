@@ -1,0 +1,31 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', 'Segoe UI', sans-serif; }
+body { background-color: #f4f7f6; color: #2c3e50; }
+.app-container { display: flex; flex-direction: column; min-height: 100vh; }
+.main-content { flex: 1; padding: 2rem; max-width: 1200px; margin: 0 auto; width: 100%; }
+.navbar { background: #003366; color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.navbar-links a { color: white; text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: 0.2s; }
+.navbar-links a:hover { color: #4da6ff; }
+.navbar .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; color: #fff; text-decoration: none;}
+.navbar .logo span { color: #4da6ff; }
+.footer { text-align: center; padding: 1.5rem; background: #1a252f; color: #95a5a6; font-size: 0.9rem; margin-top: auto; }
+.card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 1.5rem; border: 1px solid #e1e8ed; }
+.btn { background: #0055ff; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; text-decoration: none; display: inline-block; font-weight: 600; transition: background 0.3s; }
+.btn:hover { background: #0044cc; }
+.btn-secondary { background: #6c757d; }
+.btn-secondary:hover { background: #5a6268; }
+.btn-success { background: #28a745; }
+.btn-success:hover { background: #218838; }
+.btn-block { display: block; width: 100%; text-align: center; }
+.form-group { margin-bottom: 1.2rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #34495e; }
+.form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid #ced4da; border-radius: 6px; font-size: 1rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+h1, h2 { margin-bottom: 1.2rem; color: #003366; }
+.badge { background: #e8f4f8; color: #007bff; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: inline-block; margin-bottom: 1rem; }
+.table-wrapper { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; margin-top: 1rem; background: white; border-radius: 8px; overflow: hidden; }
+.table th, .table td { border-bottom: 1px solid #e1e8ed; padding: 1rem; text-align: left; }
+.table th { background-color: #f8f9fa; font-weight: 600; color: #34495e; }
+.text-center { text-align: center; }
+.mt-2 { margin-top: 2rem; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
